@@ -3,12 +3,14 @@ package com.developbyte.practica19.Adapters;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +46,10 @@ public class LibrosAdapter extends RecyclerView.Adapter<LibrosAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull LibrosAdapter.ViewHolder holder, int position) {
+
+        holder.imgPortada.setImageBitmap(BitmapFactory.decodeFile(modelList.get(position).getImage()));
         holder.txtTitulo.setText(modelList.get(position).getTitulo());
+        holder.txtEditorial.setText(modelList.get(position).getEditorial());
         holder.txtAutor.setText(modelList.get(position).getAutor());
         holder.txtAnio.setText(String.valueOf(modelList.get(position).getAnio()));
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -68,13 +73,17 @@ public class LibrosAdapter extends RecyclerView.Adapter<LibrosAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private AppCompatTextView txtTitulo, txtAutor, txtAnio;
+        private AppCompatImageView imgPortada;
+        private AppCompatTextView txtTitulo, txtEditorial, txtAutor, txtAnio;
         private AppCompatButton btnEdit, btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            imgPortada = itemView.findViewById(R.id.imgPortada);
+
             txtTitulo = itemView.findViewById(R.id.txtTitle);
+            txtEditorial = itemView.findViewById(R.id.txtEditorial);
             txtAutor = itemView.findViewById(R.id.txtAutor);
             txtAnio = itemView.findViewById(R.id.txtAnio);
 
