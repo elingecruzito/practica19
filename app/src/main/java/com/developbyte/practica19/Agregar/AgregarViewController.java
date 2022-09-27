@@ -32,7 +32,7 @@ public class AgregarViewController extends AbstractViewController implements IAg
 
     private IAgregar.IAgregarRepresentationDelegate representationDelegate;
     private AppCompatImageView imgLibro;
-    private AppCompatEditText txtTitulo,txtAutor,txtEditorial,txtAnio;
+    private AppCompatEditText txtTitulo,txtAutor,txtEditorial,txtAnio, txtCatego, txtPrecio;
     private AppCompatButton btnAgregar;
 
     private LibroModel model;
@@ -53,6 +53,9 @@ public class AgregarViewController extends AbstractViewController implements IAg
         txtAutor = view.findViewById(R.id.txtAutor);
         txtEditorial = view.findViewById(R.id.txtEditorial);
         txtAnio = view.findViewById(R.id.txtAnio);
+        txtCatego = view.findViewById(R.id.txtCatego);
+        txtPrecio = view.findViewById(R.id.txtPrecio);
+
         btnAgregar = view.findViewById(R.id.btnAgregar);
         imgLibro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +74,8 @@ public class AgregarViewController extends AbstractViewController implements IAg
                 model.setAutor(txtAutor.getText().toString());
                 model.setEditorial(txtEditorial.getText().toString());
                 model.setAnio(Integer.parseInt(txtAnio.getText().toString()));
+                model.setCategoria(txtCatego.getText().toString());
+                model.setPrecio(Double.parseDouble(txtPrecio.getText().toString()));
 
                 if(isNuevo) {
                     representationDelegate.agregarLibro(model);

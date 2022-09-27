@@ -57,6 +57,27 @@
             android:layout_height="wrap_content"
             android:inputType="number"/>
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categoria:"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtCatego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio:"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/txtPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAgregar"
             android:layout_width="match_parent"
