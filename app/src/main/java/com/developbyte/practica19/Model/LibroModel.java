@@ -5,19 +5,22 @@ public class LibroModel {
     //titulo, autor, editorial, año y su imagen
 
     private int id;
-    private String titulo, autor, editorial, image;
+    private String titulo, autor, editorial, image, categoria;
     private int anio;
+    private double precio;
 
     public LibroModel() {
     }
 
-    public LibroModel(int id, String titulo, String autor, String editorial, String image, int anio) {
+    public LibroModel(int id, String titulo, String autor, String editorial, String image, String categoria, int anio, double precio) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
         this.image = image;
+        this.categoria = categoria;
         this.anio = anio;
+        this.precio = precio;
     }
 
     public int getId() {
@@ -60,11 +63,27 @@ public class LibroModel {
         this.image = image;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public int getAnio() {
         return anio;
     }
 
     public void setAnio(int anio) {
         this.anio = anio;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 }
